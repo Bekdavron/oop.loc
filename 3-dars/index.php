@@ -2,10 +2,10 @@
 require __DIR__ . "/Product.php";
 
 $phone = new Product();
-$phone->title = "Book1";
-$phone->price = 100;
+$phone->title = "Phone";
+$phone->price = 200;
 
 $book = new Product();
 $book->title = "Book";
-$book->price = 65.8;
+$book->price = 20.8;
 var_dump($phone, $book);

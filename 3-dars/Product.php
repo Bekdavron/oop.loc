@@ -3,5 +3,5 @@
 class Product
 {
   public string $title = "Some Product";
-  public int $price;
+  public int| float $price;
 }
