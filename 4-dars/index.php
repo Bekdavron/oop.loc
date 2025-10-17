@@ -2,10 +2,13 @@
 <?php
 
 require __DIR__ . "/Product.php";
-$product = new Product();
-$product->price = 1500;
-$product->title = "Iphone 14 Pro";
-// var_dump($product);
 
-// echo $product->sayHello();
-echo $product->getRealPrice();
+$book = new Product();
+$book->title = "PHP Book";
+$book->price = 2999;
+
+$phone = new Product();
+$phone->title = "iPhone 14 Pro";
+$phone->price = 99999;
+echo $book->getRealPrice() . "\n";
+echo $phone->getRealPrice() . "\n";
