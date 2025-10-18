@@ -1,18 +1,19 @@
 <?php
-require_once __DIR__ . '/Cart.php';
-
 class Cart
 {
+  public array $data = [];
 
-  public function __construct(
-    public string $title,
-    public float|int $price
-  ) {
-    echo "Product created: <br>";
-  }
-
-  public function getRealPrice($currency = "$"): string
+  public function add(array $product)
   {
-    return "{$currency}" . $this->price / 100;
+    $this->data[] = $product;
+    return $this;
+  }
+  public function totalPrice(): int
+  {
+    $total = 0;
+    foreach ($this->data as $item) {
+      $total += $item['price'];
+    }
+    return $total;
   }
 }

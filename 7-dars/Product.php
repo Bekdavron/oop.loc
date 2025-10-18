@@ -1,19 +1,10 @@
 <?php
 class Product
 {
-  public array $products = [];
-
-  public function add($product): static
-  {
-    $this->products[] = $product;
-    return $this;
-  }
-  public function getTotal($currency = "$"): string
-  {
-    $total = 0;
-    foreach ($this->products as $product) {
-      $total += $product->price;
-    }
-    return "{$currency}" . $total / 100;
+  public function __construct(
+    public string $title,
+    public float|int $price
+  ) {
+    echo "Product created: <br>";
   }
 }

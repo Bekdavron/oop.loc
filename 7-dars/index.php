@@ -1,10 +1,11 @@
 <?php
-error_reporting(-1);
-require_once __DIR__ . '/Cart.php';
+require_once "Product.php";
+require_once "Cart.php";
 
-$bookCartObj = new Cart("Learn PHP", 15000);
-$book = $bookCartObj->getRealPrice($currency = "UZS ");
-$notebookCartObj = new Cart("MacBook Pro", 250000);
-$notebook = $notebookCartObj->getRealPrice();
+$book = new Product("Learn PHP", 2999);
+$phone = new Product("Smartphone", 59999);
 
-var_dump($book, $notebook);
+$cart = new Cart();
+$cart->add(['title' => $book->title, 'price' => $book->price]);
+$cart->add(['title' => $phone->title, 'price' => $phone->price]);
+echo "Total Price: " . $cart->totalPrice() / 100 . "$";
